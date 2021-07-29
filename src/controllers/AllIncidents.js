@@ -3,7 +3,8 @@ const connection = require("../database/connection");
 module.exports = {
   async index(request, response) {
     const [count] = await connection("incidents").count();
-    const incidents = await connection("incidents")
+    const ong_id = request.headers.authorization
+    const incidents = await connection("incidents", ong_id)
       .join("ongs")
       .select([
         "incidents.id",

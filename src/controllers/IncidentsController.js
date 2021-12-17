@@ -29,9 +29,9 @@ module.exports = {
         const result = await connection("incidents")
         .where("id", id)
         .update({
-            title: title, 
-            description: description, 
-            value: value,
+            title, 
+            description, 
+            value,
         });
 
         if (!result) {

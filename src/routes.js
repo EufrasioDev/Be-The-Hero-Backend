@@ -93,7 +93,4 @@ routes.put("/incidents/edit:id",celebrate({
   }).unknown()
 }), IncidentsController.update);
 
-/**Pega todos os incidents */
-routes.get("/all", AllIncidents.index);
-
 module.exports = routes; 
